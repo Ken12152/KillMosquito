@@ -19,7 +19,7 @@ function insertRandomMosquito() {
     var mosquito = document.createElement('img')
 
     mosquito.src = 'img/mosca.png'
-    mosquito.className = randomMosquitoSize()
+    mosquito.className = randomMosquitoSize() + ' ' + randomMosquitoDirection()
     mosquito.style.position = 'absolute'
     mosquito.style.top = insertPosY + 'px'
     mosquito.style.left = insertPosX + 'px'
@@ -30,14 +30,25 @@ function insertRandomMosquito() {
 }
 
 function randomMosquitoSize() {
-    var classth = Math.floor(Math.random() * 3)
+    var sizeClass = Math.floor(Math.random() * 3)
 
-    switch(classth) {
+    switch(sizeClass) {
     case 0:
         return 'mosquito1'
     case 1:
         return 'mosquito2'
     case 2:
         return 'mosquito3'
+    }
+}
+
+function randomMosquitoDirection() {
+    var directionClass = Math.floor(Math.random() * 2)
+
+    switch(directionClass) {
+    case 0:
+        return 'directionA'
+    case 1:
+        return 'directionB'
     }
 }
